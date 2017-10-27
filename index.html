@@ -38,12 +38,9 @@
     accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
 });
    osm.addTo(mapa);
-
- 
-	    
-	    
-	    
-	    
+      
+   
+    
       // retorna un color con base en la cantidad de especies
       function color(d) {
 	return d > 60 ? '#d7191c' :
@@ -94,8 +91,19 @@
             color: '#ffffff'
           };
         },
-        
-	pointToLayer: function (feature, latlng) {
+	   
+	      
+	L.geoJson(cantones, {
+        style: function (feature) {
+	  return {
+          color: '#0000ff',
+          weight:0.5		  
+          };
+        }
+      }).addTo(mapa);      
+	      
+	   
+          pointToLayer: function (feature, latlng) {
 	  return L.circleMarker(latlng, {
 	    radius: 3,
 	    fillColor: "#ff7800",
