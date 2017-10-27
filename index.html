@@ -23,6 +23,7 @@
 
     <script src="js/riqespecies_avesacures-cr_ramsar-2017-wgs84.js" type="text/javascript"></script>
     <script src="js/regPresGBIFAvesAcuRes-cr_ramsar-2017-wgs84.js"  type="text/javascript"></script>
+    <script src="js/cantoneswgs84.js" type="text/javascript"></script>
    
 
     <script>
@@ -91,7 +92,14 @@
             color: '#ffffff'
           };
         },
-	   
+	
+	cantonescr = L.geoJson(cantones, {
+        style: function (feature) {
+	  return {
+            fillColor: '#0000ff', 
+            color: '#ffffff'
+          };
+        },      
 	      
 	       
 	   
@@ -108,7 +116,8 @@
 	      
 	onEachFeature: infoPresencia
       })
-      registrosPresencia.addTo(mapa);	    
+      registrosPresencia.addTo(mapa);
+      cantonescr.addTo(mapa);	    
 	    
       var baseLayers = {
 	"OpenStreetMap": osm,
@@ -117,6 +126,7 @@
       var overlays = {
 	"Riqueza de especies": riqueza,
 	"Registros de presencia": registrosPresencia
+	"Cantones del Pais": cantonescr      
       };
       L.control.layers(baseLayers, overlays).addTo(mapa);
 	    
