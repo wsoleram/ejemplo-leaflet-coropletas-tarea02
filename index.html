@@ -75,8 +75,16 @@
       })
       riqueza.addTo(mapa);
 	    
+        cantonescr = L.geoJson(cantones, {
+        style: function (feature) {
+	  return {
+            fillColor: '#0000ff', 
+            color: '#ffffff'
+          };
+        }     
+      }).addTo(mapa);     	    
 	    
-      function infoPresencia(feature, layer) {
+       function infoPresencia(feature, layer) {
 	var popupContent = "";
 	if (feature.properties && feature.properties.scientif_1) {
 	  popupContent += feature.properties.scientif_1;
@@ -92,18 +100,8 @@
             color: '#ffffff'
           };
         },
-     	
-	cantonescr = L.geoJson(cantones, {
-        style: function (feature) {
-	  return {
-            fillColor: '#0000ff', 
-            color: '#ffffff'
-          };
-        }     
-      }).addTo(mapa);     
-	       
-	   
-          pointToLayer: function (feature, latlng) {
+   
+	  pointToLayer: function (feature, latlng) {
 	  return L.circleMarker(latlng, {
 	    radius: 3,
 	    fillColor: "#ff7800",
