@@ -49,10 +49,10 @@
 	       d > 20 ? '#c7e6db' :
 	      	        '#2c7bb6';
       }	    
-      function infoRiqueza(feature, layer) {
-	var popupContent = "Riqueza de especies: ";
-	if (feature.properties && feature.properties.spprichnes) {
-	  popupContent += feature.properties.spprichnes;
+      function Poblacion(feature, layer) {
+	var popupContent = "Poblacion por Canton: ";
+	if (feature.properties && feature.properties.NCANTON) {
+	  popupContent += feature.properties.NCANTON;
 	} else {
 	  popupContent += 0; 
 	}
