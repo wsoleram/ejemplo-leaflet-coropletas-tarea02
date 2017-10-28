@@ -44,11 +44,11 @@
     
       // retorna un color con base en la cantidad de especies
       function color(d) {
-	return d > 5000 ? '#d7191c' :
-	       d > 8000 ? '#fec980' :
-	       d > 10000 ? '#c7e6db':
-	       d > 12000 ? '#2c7bb6':
-	       d > 15000 ? '#2c7bb6';
+	return d > 5000 ?  '#d7191c':
+	       d > 10000 ? '#fec980':
+	       d > 12000 ? '#c7e6db':
+	       d > 15000 ? '#2c7bb6':
+	                   '#2c7bb6';
       }	    
       function Poblacion(feature, layer) {
 	var popupContent = "Poblacion por Canton: ";
