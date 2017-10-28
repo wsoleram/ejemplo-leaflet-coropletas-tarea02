@@ -91,7 +91,8 @@
             fillColor: '#0000ff', 
             color: '#ffffff'
           };
-        },
+        }
+      }).addTo(mapa);
 	
 	cantonescr = L.geoJson(cantones, {
         style: function (feature) {
@@ -99,8 +100,8 @@
             fillColor: '#0000ff', 
             color: '#ffffff'
           };
-        },      
-	      
+        }     
+      }).addTo(map);     
 	       
 	   
           pointToLayer: function (feature, latlng) {
