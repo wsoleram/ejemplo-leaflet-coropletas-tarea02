@@ -51,10 +51,10 @@
 	       d > 250000 ? '#d93b28':
 	                  ? '#b30000';
       }	    
-      function Poblacion(feature, layer) {
-	var popupContent = "Poblacion por Canton: ";
-	if (feature.properties && feature.properties.POB_2011_T) {
-	  popupContent += feature.properties.POB_2011_T;
+      function InfoRiqueza(feature, layer) {
+	var popupContent = "Riqueza de especies: ";
+	if (feature.properties && feature.properties.spprichnes) {
+	  popupContent += feature.properties.spprichnes;
 	} else {
 	  popupContent += 0; 
 	}
